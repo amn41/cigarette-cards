@@ -1,0 +1,9 @@
+{
+  "name": "cigarettecard-club-functions",
+  "version": "1.0.0",
+  "description": "Netlify functions for cigarettecard.club",
+  "dependencies": {
+    "resend": "^2.0.0",
+    "querystring": "^0.2.1"
+  }
+}
