@@ -115,7 +115,7 @@ h1, h2, h3 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
-    margin: 30px auto 0;
+    margin: 45px auto 0;
     max-width: 960px;
 }
 
@@ -246,7 +246,7 @@ h1, h2, h3 {
 
 /* About section */
 .about {
-    padding: 80px 0 400px;
+    padding: 80px 0 0;
     position: relative;
 }
 
@@ -282,13 +282,15 @@ h1, h2, h3 {
     color: var(--text-light);
 }
 
-/* Timeline */
+/* Timeline - REVISED GRID with Explicit Rows */
 .timeline {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0 auto 100px;
     position: relative;
-    padding: 0 0 100px;
-    overflow: visible;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; /* Col 1 (left), Col 2 (line/gap), Col 3 (right) */
+    /* Define row behavior implicitly, gap controls spacing */
+    gap: 0px 30px; /* Row gap (vertical spacing!), Column gap */
 }
 
 .timeline::before {
@@ -297,61 +299,79 @@ h1, h2, h3 {
     top: 0;
     bottom: 0;
     left: 50%;
+    transform: translateX(-50%);
     width: 1px;
-    background-color: #e5d9c8;
+    background-color: var(--border);
     z-index: 1;
+    /* The line sits visually in the gap created by grid-template-columns */
 }
 
+/* Base style for items (optional, could be merged into nth-child) */
 .timeline-item {
-    position: relative;
-    width: 42%;
-    margin-bottom: 220px;
-    clear: both;
+    position: relative; /* Needed for dot positioning */
+    /* Remove text-align here, set in specific rules */
 }
 
-.timeline-item:nth-child(odd) {
-    float: left;
+/* --- Explicit Row and Column Placement --- */
+.timeline-item:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
     text-align: right;
-    clear: left;
 }
-
-.timeline-item:nth-child(even) {
-    float: right;
+.timeline-item:nth-child(2) {
+    grid-column: 3;
+    grid-row: 2;
     text-align: left;
-    clear: right;
-    margin-top: 110px;
 }
-
 .timeline-item:nth-child(3) {
-    margin-top: 110px;
+    grid-column: 1;
+    grid-row: 3;
+    text-align: right;
 }
-
 .timeline-item:nth-child(4) {
-    margin-top: 110px;
+    grid-column: 3;
+    grid-row: 4;
+    text-align: left;
 }
-
-.timeline-item:last-child {
-    margin-bottom: 0;
+/* Add more rules like this if you have more timeline items: */
+/*
+.timeline-item:nth-child(5) {
+    grid-column: 1;
+    grid-row: 5;
+    text-align: right;
 }
+.timeline-item:nth-child(6) {
+    grid-column: 3;
+    grid-row: 6;
+    text-align: left;
+}
+*/
+/* --- End Explicit Placement --- */
 
+
+/* Dot Styling and Positioning */
 .timeline-item::before {
     content: '';
     position: absolute;
     width: 16px;
     height: 16px;
-    background-color: #a35c37;
+    background-color: var(--primary-light);
     border-radius: 50%;
-    top: 29px;
+    top: 50%; /* Keep original vertical alignment for dot */
     z-index: 2;
+    transform: translateY(-50%); /* Vertically center dot relative to 'top' more accurately */
 }
 
+/* Position dots based on which column the item is IN */
 .timeline-item:nth-child(odd)::before {
-    right: -33px;
+     /* Item is in column 1 (left), dot goes to the right */
+    right: -23px; /* Approx: half column-gap (15px) + half dot width (8px) */
+}
+.timeline-item:nth-child(even)::before {
+     /* Item is in column 3 (right), dot goes to the left */
+    left: -23px; /* Approx: half column-gap (15px) + half dot width (8px) */
 }
 
-.timeline-item:nth-child(even)::before {
-    left: -33px;
-}
 
 .timeline-content {
     background-color: var(--card);
@@ -367,6 +387,87 @@ h1, h2, h3 {
     color: var(--primary);
     margin-bottom: 8px;
     font-size: 1.2rem;
+}
+
+/* === Keep other styles (.about, footer, responsive) as they were === */
+/* Make sure the responsive section uses the correct approach too if needed */
+
+/* Responsive - Adjust Grid for single column */
+@media (max-width: 768px) {
+    /* Keep card grid and subscription form changes */
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .subscription-form {
+        flex-direction: column;
+    }
+    .subscription-form input,
+    .subscription-form button {
+        width: 100%;
+        border-radius: 0;
+    }
+    .hero h1 {
+        font-size: 2.25rem;
+    }
+
+    /* Timeline adjustments for mobile */
+    .timeline {
+        /* Switch to 2 columns: Dot/Line | Content */
+        grid-template-columns: auto 1fr;
+        gap: 30px 15px; /* Adjust gaps */
+        margin: 0 auto 60px;
+    }
+
+    .timeline::before {
+        left: 16px; /* Position line relative to the start */
+        transform: translateX(0); /* No need for centering transform */
+        grid-column: 1; /* Ensure it's in the first column */
+    }
+
+     /* Override explicit desktop placements for mobile */
+    .timeline-item, /* Reset base */
+    .timeline-item:nth-child(1),
+    .timeline-item:nth-child(2),
+    .timeline-item:nth-child(3),
+    .timeline-item:nth-child(4) { /* Add any others */
+        grid-column: 2; /* ALL items go in the second column */
+        grid-row: auto; /* Let them flow naturally in rows */
+        text-align: left; /* Align all text left */
+    }
+
+
+    .timeline-item::before {
+        /* Reset both potentially */
+        left: auto;
+        right: auto;
+        /* Position dot relative to the start of the item, pushing left over the line */
+        left: -23px; /* Adjust based on new gap (half gap 7.5px + half dot 8px = ~16px? Needs tuning) */
+        /* You might need to fine-tune this value (-16px to -25px range likely) */
+    }
+
+     /* No need for separate odd/even dot rules on mobile */
+     .timeline-item:nth-child(odd)::before,
+     .timeline-item:nth-child(even)::before {
+         left: -23px; /* Overwrite desktop rules, ensure consistency */
+         right: auto; /* Ensure right is not set */
+     }
+}
+
+/* Further mobile tweaks if needed */
+@media (max-width: 480px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero h1 {
+        font-size: 1.75rem;
+    }
+    .timeline::before {
+       left: 12px; /* Maybe slightly adjust line position */
+    }
+     .timeline-item:nth-child(odd)::before,
+     .timeline-item:nth-child(even)::before {
+        left: -19px; /* Adjust dot position accordingly */
+     }
 }
 
 /* Footer */
