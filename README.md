@@ -8,101 +8,143 @@ Cigarette cards were some of the world's first collectible cards, predating base
 
 The New York Public Library has digitized over 100,000 cigarette cards, making them freely available through their Digital Collections API.
 
-## Setup
 
-### Prerequisites
-- Python 3.7+
-- A NYPL Digital Collections API token
-- A Substack account
+# Daily NYPL Cigarette Card Email 🚬✉️
 
-### Installation
+[![Daily Card Workflow](https://github.com/YOUR_USERNAME/YOUR_REPO_NAME/actions/workflows/daily_card.yml/badge.svg)](https://github.com/YOUR_USERNAME/YOUR_REPO_NAME/actions/workflows/daily_card.yml)
 
-1. Clone this repository:
-```bash
-git clone https://github.com/yourusername/daily-cigarette-cards
-cd daily-cigarette-cards
-```
+A simple Python application that automatically sends a daily email featuring a random vintage cigarette card image sourced from the [New York Public Library's Digital Collections](https://digitalcollections.nypl.org/). The emails are sent using the [Resend](https://resend.com/) API via their Broadcast functionality.
 
-2. Install required packages:
-```bash
-pip install -r requirements.txt
-```
+---
 
-3. Copy the example environment file and fill in your credentials:
-```bash
-cp .env.example .env
-# Edit .env with your credentials
-```
+## ✨ Features
 
-4. Download the card metadata:
-```bash
-python download_metadata.py
-```
+* **Daily Automation:** Uses GitHub Actions to run automatically once per day.
+* **Random Selection:** Picks a random cigarette card from the NYPL collection metadata.
+* **Duplicate Prevention:** Keeps track of previously sent cards to avoid duplicates (using GitHub Action artifacts).
+* **Direct Image Linking:** Uses direct image URLs from NYPL Digital Collections.
+* **Resend Broadcast API:** Leverages the Resend Broadcast API to send emails to a predefined audience.
+* **Easy Setup:** Requires minimal configuration via GitHub Secrets.
 
-This will create a `metadata.json` file containing information about all available cards in the collection.
+## 🚀 Technology Stack
 
-### Required Files
+* **Python 3:** Core application language.
+* **Requests:** For fetching/verifying image URLs.
+* **Resend Python SDK:** For interacting with the Resend API.
+* **GitHub Actions:** For daily automation and state management via artifacts.
 
-- `metadata.json`: Contains the NYPL API response with card metadata
-- `posted_cards.json`: Tracks which cards have been posted (created automatically)
+## 🔧 Setup and Installation
 
-## Usage
+Follow these steps to set up the project, either for local testing or before deploying the GitHub Action.
 
-### Testing Locally
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git](https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git)
+    cd YOUR_REPO_NAME
+    ```
 
-Run the script to create a single post scheduled for 3 minutes in the future:
-```bash
-python post_card.py
-```
+2.  **Create and activate a Python virtual environment:**
+    ```bash
+    python -m venv venv
+    # On Windows:
+    # venv\Scripts\activate
+    # On macOS/Linux:
+    # source venv/bin/activate
+    ```
 
-### Automation
+3.  **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-To automate daily posts, you can set up a cron job or use a service like GitHub Actions. Example cron schedule:
+4.  **Obtain Metadata:**
+    * This project relies on a `metadata.json` file containing data scraped or downloaded from the NYPL Digital Collections API for relevant items (like cigarette cards).
+    * This repository includes a `metadata.json` file. If you need to regenerate or update it, you would typically use a separate script to query the NYPL API. *(You can add details here if you have such a script)*.
 
-```bash
-0 9 * * * cd /path/to/repo && python post_card.py
-```
+5.  **Set up Resend:**
+    * Create a [Resend account](https://resend.com/).
+    * Verify your sending domain (e.g., `yourdomain.com`).
+    * Create an API Key.
+    * Create an Audience and note its Audience ID. Add contacts to this audience who should receive the emails.
 
-This will run the script daily at 9 AM.
+## 🔑 Configuration
 
-## How It Works
+Configuration is primarily handled via GitHub Secrets for the automated workflow. For local testing, you can use a `.env` file.
 
-1. The script reads card metadata from a local JSON file
-2. It selects a random unposted card
-3. Downloads the high-resolution image from NYPL
-4. Creates a Substack post with the title "A little card to brighten your day"
-5. Schedules the post for publication
-6. Records the card as posted to avoid duplicates
+### GitHub Secrets (for Automation)
 
-## Contributing
+Go to your repository's `Settings` > `Secrets and variables` > `Actions` and add the following secrets:
 
-Contributions are welcome! Some areas that could use improvement:
+* `RESEND_API_KEY`: Your Resend API key (e.g., `re_...`). **Required**.
+* `RESEND_AUDIENCE_ID`: The ID of your Resend Audience to send the broadcast to. **Required**.
+* `FROM_EMAIL`: The verified email address Resend will use in the "From" field (e.g., `"Your Name <sender@yourverifieddomain.com>"`). **Required**.
+* `NYPL_TOKEN`: Your NYPL API token. *(Optional, currently only needed if you modify the script to make authenticated NYPL API calls)*.
 
-- Better error handling
-- Image preprocessing/optimization
-- More detailed card descriptions
-- Alternative scheduling strategies
-- Support for different post formats
+### `.env` File (for Local Testing)
 
-## Getting an API Token
+1.  Create a file named `.env` in the root directory.
+2.  Add the following variables (replace with your actual values):
 
-To get a NYPL Digital Collections API token:
-1. Visit [NYPL's Digital Collections API page](https://api.repo.nypl.org/)
-2. Sign up for an account
-3. Request an API token
+    ```dotenv
+    # .env file
+    RESEND_API_KEY="re_YOUR_RESEND_API_KEY"
+    RESEND_AUDIENCE_ID="YOUR_RESEND_AUDIENCE_ID"
+    FROM_EMAIL="Your Name <sender@yourverifieddomain.com>"
+    # NYPL_TOKEN="YOUR_NYPL_TOKEN" # Optional
 
-## License
+    # Optional: Override default file paths if needed
+    # METADATA_PATH="path/to/your/metadata.json"
+    # POSTED_PATH="path/to/your/posted_cards.json"
+    # MODE="test" # Set to prevent updating posted_cards.json locally
+    ```
+3.  **Important:** Ensure `.env` is listed in your `.gitignore` file to avoid committing secrets.
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+## 🤖 Automation with GitHub Actions
 
-## Acknowledgments
+This project uses the GitHub Action defined in `.github/workflows/daily_card.yml`.
 
-- New York Public Library for providing the Digital Collections API
-- The unofficial Substack API library
-- The tobacco companies of the late 19th/early 20th centuries for creating these fascinating historical artifacts
+* **Schedule:** It's configured to run automatically once a day at a specified time (default is 14:00 UTC - adjust the `cron` schedule in the file if needed). Remember that GitHub Actions schedules use **UTC time**.
+* **Manual Trigger:** You can also trigger it manually from the "Actions" tab in your GitHub repository (`workflow_dispatch`).
+* **Secrets:** It uses the GitHub Secrets you configured for API keys and other sensitive information.
+* **State Management:** It uses artifacts to manage the list of sent cards (see below).
 
-## Support
+## 💾 State Management: `posted_cards.json`
 
-For questions or issues:
-1. Open an issue in this repository
-2. Contact [your contact info]
+To avoid sending duplicate cards, the script tracks the UUIDs of sent cards in a file named `posted_cards.json`.
+
+* **`.gitignore`:** This file is intentionally listed in `.gitignore` to prevent the constantly changing state from being committed to the repository history.
+* **GitHub Actions Artifacts:** The `daily_card.yml` workflow handles state persistence between runs:
+    1.  **Download:** At the start of a run, it attempts to download the `posted-cards-state` artifact from the previous successful run.
+    2.  **Prepare:** If the artifact doesn't exist (first run) or download fails, it creates a new `posted_cards.json` containing `[]`. Otherwise, it uses the downloaded file.
+    3.  **Execute:** The `broadcast_card.py` script reads this file, selects a card not in the list, and appends the new card's UUID to the list within the script's logic.
+    4.  **Upload:** If the script completes successfully, the *updated* `posted_cards.json` file is uploaded as the `posted-cards-state` artifact for the next run.
+* **Limitations:**
+    * Artifacts have a retention period (default 90 days for free/pro accounts). If the action doesn't run successfully for longer than that, the state might be lost.
+    * If the script fails *after* sending the email but *before* the artifact upload step completes, the state won't be saved, potentially leading to a duplicate on the next run. For higher reliability, consider using external storage (like S3 or a database) for state.
+
+## ▶️ Running Locally
+
+1.  Ensure you have set up the `.env` file as described in Configuration.
+2.  Make sure your virtual environment is activated.
+3.  Run the script:
+    ```bash
+    python broadcast_card.py
+    ```
+4.  This will execute the script once, sending an email (if not in test mode) and updating the local `posted_cards.json` file.
+
+## 🙌 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request or open an Issue. (Add more specific contribution guidelines if desired).
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details (or add license text here).
+
+**Recommendation:** Create a `LICENSE` file in your repository containing the MIT License text. [Choosealicense.com](https://choosealicense.com/licenses/mit/) is a helpful resource.
+
+## 🙏 Acknowledgments
+
+* Card images and metadata are sourced from the [New York Public Library Digital Collections](https://digitalcollections.nypl.org/). Thank you, NYPL!
+* Email delivery powered by [Resend](https://resend.com/).
+
+---
