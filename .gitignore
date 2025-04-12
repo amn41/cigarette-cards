@@ -1,0 +1,6 @@
+# .gitignore
+posted_cards.json
+__pycache__/
+*.pyc
+.env
+temp_card_*.jpg 

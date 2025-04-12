@@ -1,0 +1,73 @@
+# .github/workflows/daily_card.yml
+name: Send Daily Cigarette Card
+
+on:
+  schedule:
+    # Runs every day at 14:00 UTC (adjust as needed - e.g., 8 AM Costa Rica time is 14:00 UTC)
+    # Use https://crontab.guru to help choose a time
+    - cron: '0 14 * * *'
+  workflow_dispatch: # Allows manual triggering from the Actions tab
+
+permissions:
+  actions: write # Needed to upload workflow artifacts
+
+jobs:
+  send_card:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11' # Or your preferred Python version
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Download previous posted cards state
+        uses: actions/download-artifact@v4
+        id: download-state # Give the step an ID to check its outcome
+        with:
+          name: posted-cards-state # Must match the upload name later
+          path: . # Download directly into the workspace root
+        # Continue even if artifact isn't found (e.g., first run)
+        continue-on-error: true
+
+      - name: Prepare posted_cards.json file
+        run: |
+          # Check if the download step failed OR if the file doesn't exist after download attempt
+          if [[ "${{ steps.download-state.outcome }}" == "failure" || ! -f "posted_cards.json" ]]; then
+            echo "No previous posted_cards.json found or download failed. Creating empty list."
+            echo "[]" > posted_cards.json
+          else
+            echo "Using posted_cards.json from previous successful run."
+          fi
+          echo "Current state file content:"
+          cat posted_cards.json
+
+      - name: Run send script # Renamed script execution step
+        id: run-script # Give the step an ID
+        env:
+          # Inject secrets as environment variables
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RESEND_AUDIENCE_ID: ${{ secrets.RESEND_AUDIENCE_ID }}
+          FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
+          NYPL_TOKEN: ${{ secrets.NYPL_TOKEN }} # Optional, if your script uses it
+          # Ensure METADATA_PATH and POSTED_PATH point correctly if not default
+          METADATA_PATH: "metadata.json"
+          POSTED_PATH: "posted_cards.json" # Script MUST read/write this exact file name
+        # --- Corrected python script name below ---
+        run: python broadcast_card.py
+
+      - name: Upload updated posted cards state
+        # This step ONLY runs if the previous step (run-script) succeeded
+        if: steps.run-script.outcome == 'success'
+        uses: actions/upload-artifact@v4
+        with:
+          name: posted-cards-state # Use the same name for consistency
+          path: posted_cards.json # Upload the updated file
+          retention-days: 90 # Optional: Adjust artifact retention (max 90 for free/pro accounts)
