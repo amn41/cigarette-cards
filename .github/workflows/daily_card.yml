@@ -10,6 +10,7 @@ on:
 
 permissions:
   actions: write # Needed to upload workflow artifacts
+  contents: read
 
 jobs:
   send_card:
