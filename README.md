@@ -1,6 +1,7 @@
 # Daily Cigarette Cards
 
 This is a simple newsletter service using Resend for emails and managing signups via a simple netlify function.
+You can sign up at [cigarettecard.club](https://cigarettecard.club/)
 
 ## Background
 
