@@ -165,7 +165,7 @@ class ResendBroadcastSender:
             create_params: resend.Broadcasts.CreateParams = {
                 "audience_id": self.audience_id,
                 "from": self.from_email,
-                "subject": f"A little card for you: {card_title[:50]}",
+                "subject": f"today's cigarette card",
                 "html": html_content,
                 "tags": [
                     {"name": "content_type", "value": "cigarette_card"},
