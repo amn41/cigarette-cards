@@ -1,107 +1,217 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cigarette Card Club</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Cigarette Card Club</h1>
-                <p>A vintage card in your inbox each day</p>
-            </div>
-            
-            <!-- Static card grid -->
-            <div class="card-grid">
-                <!-- Real cigarette cards -->
-                <div class="card-item">
-                    <img src="card1.jpg" alt="A Cairn - Vintage cigarette card">
-                    <div class="caption">A Cairn</div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Cigarette Card Club</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@400;600&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Cigarette Card Club</h1>
+                    <p>A vintage card in your inbox each day</p>
                 </div>
-                <div class="card-item">
-                    <img src="card2.jpg" alt="Lieut. E.H. Shackleton - Vintage cigarette card">
-                    <div class="caption">Lieut. E.H. Shackleton</div>
-                </div>
-                <div class="card-item">
-                    <img src="card3.jpg" alt="Ogden's Cigarettes - Vintage cigarette card">
-                    <div class="caption">Ogden's Cigarettes</div>
-                </div>
-                <div class="card-item">
-                    <img src="card4.jpg" alt="Queen Wasp - Vintage cigarette card">
-                    <div class="caption">Queen Wasp</div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="subscribe" class="subscription">
-        <div class="container">
-            <div class="subscription-content">
-                <h2>Join the Club</h2>
-                <p>Subscribe to receive a vintage cigarette card in your inbox every day. Free.</p>
-                <form action="/.netlify/functions/subscribe" method="POST" class="subscription-form" id="subscribe-form" name="contact" netlify>
-                    <input type="email" name="email" placeholder="Your email address" required>
-                    <button type="submit" id="subscribe-button">Subscribe</button>
-                </form>
-                <p style="font-size: 14px; margin-top: 15px;" id="form-message">Unsubscribe anytime.</p>
-            </div>
-        </div>
-    </section>
-    
-    <section class="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>About</h2>
-                    <p>Cigarette cards were the first collectible cards, predating modern trading cards by decades. Between the 1870s and 1940s, tobacco companies included these illustrated cards in cigarette packages.</p>
-                    <p>Each card featured detailed illustrations spanning sports figures, wildlife, historical events, and technological innovations.</p>
-                </div>
-            </div>
-            
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-year">1870s</div>
-                        <p>Cards begin as stiffeners in cigarette packages.</p>
+                <!-- Static card grid -->
+                <div class="card-grid">
+                    <!-- Real cigarette cards -->
+                    <div class="card-item">
+                        <img
+                            src="card1.jpg"
+                            alt="A Cairn - Vintage cigarette card"
+                        />
+                        <div class="caption">A Cairn</div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-year">1900-1917</div>
-                        <p>Golden Age with hundreds of series covering diverse topics.</p>
+                    <div class="card-item">
+                        <img
+                            src="card2.jpg"
+                            alt="Lieut. E.H. Shackleton - Vintage cigarette card"
+                        />
+                        <div class="caption">Lieut. E.H. Shackleton</div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-year">1940s</div>
-                        <p>Production ends due to WWII paper shortages.</p>
+                    <div class="card-item">
+                        <img
+                            src="card3.jpg"
+                            alt="Ogden's Cigarettes - Vintage cigarette card"
+                        />
+                        <div class="caption">Ogden's Cigarettes</div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-year">2025</div>
-                        <p>Cigarette Card Club launches, delivering vintage cards to inboxes worldwide.</p>
+                    <div class="card-item">
+                        <img
+                            src="card4.jpg"
+                            alt="Queen Wasp - Vintage cigarette card"
+                        />
+                        <div class="caption">Queen Wasp</div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <p>© 2025 cigarettecard.club · All cards are from historical collections and are in the public domain</p>
+        <section id="subscribe" class="subscription">
+            <div class="container">
+                <div class="subscription-content">
+                    <h2>Join the Club</h2>
+                    <p>
+                        Subscribe to receive a vintage cigarette card in your
+                        inbox every day. Free.
+                    </p>
+                    <form class="subscription-form" id="subscribe-form">
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Your email address"
+                            required
+                        />
+                        <button type="submit" id="subscribe-button">
+                            Subscribe
+                        </button>
+                    </form>
+                    <p
+                        style="font-size: 14px; margin-top: 15px"
+                        id="form-message"
+                    >
+                        Unsubscribe anytime.
+                    </p>
+                </div>
             </div>
-        </div>
-    </footer>
+        </section>
 
-    <script src="script.js"></script>
-</body>
+        <section class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>About</h2>
+                        <p>
+                            Cigarette cards were the first collectible cards,
+                            predating modern trading cards by decades. Between
+                            the 1870s and 1940s, tobacco companies included
+                            these illustrated cards in cigarette packages.
+                        </p>
+                        <p>
+                            Each card featured detailed illustrations spanning
+                            sports figures, wildlife, historical events, and
+                            technological innovations.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-year">1870s</div>
+                            <p>
+                                Cards begin as stiffeners in cigarette packages.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-year">1900-1917</div>
+                            <p>
+                                Golden Age with hundreds of series covering
+                                diverse topics.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-year">1940s</div>
+                            <p>Production ends due to WWII paper shortages.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2025</div>
+                            <p>
+                                Cigarette Card Club launches, delivering vintage
+                                cards to inboxes worldwide.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <p>
+                        © 2025 cigarettecard.club · All cards are from
+                        historical collections and are in the public domain
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const subscribeForm = document.getElementById("subscribe-form");
+                const subscribeButton =
+                    document.getElementById("subscribe-button");
+                const formMessage = document.getElementById("form-message");
+
+                if (subscribeForm) {
+                    subscribeForm.addEventListener("submit", function (e) {
+                        e.preventDefault();
+
+                        // Disable button and show loading state
+                        subscribeButton.disabled = true;
+                        subscribeButton.innerText = "Subscribing...";
+                        formMessage.innerText = "Processing...";
+
+                        // Get form data
+                        const formData = new FormData(subscribeForm);
+                        const email = formData.get("email");
+
+                        // Submit form using fetch API
+                        fetch("/.netlify/functions/subscribe", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify({ email }),
+                        })
+                            .then(async (response) => {
+                                if (response.ok) {
+                                    // Show success message
+                                    subscribeButton.innerText = "Subscribed!";
+                                    formMessage.innerText =
+                                        "Subscription confirmed. Check your inbox.";
+                                    subscribeForm.reset();
+
+                                    // Redirect to thank you page
+                                    setTimeout(() => {
+                                        window.location.href =
+                                            "/thank-you.html";
+                                    }, 1500);
+                                } else {
+                                    const data = await response.json();
+                                    throw new Error(
+                                        data.error || "Subscription failed",
+                                    );
+                                }
+                            })
+                            .catch((error) => {
+                                console.error("Error:", error);
+                                subscribeButton.innerText = "Subscribe";
+                                subscribeButton.disabled = false;
+                                formMessage.innerText = `Error: ${error.message}. Please try again.`;
+                            });
+                    });
+                }
+            });
+        </script>
+    </body>
 </html>
