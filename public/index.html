@@ -190,12 +190,6 @@
                                     formMessage.innerText =
                                         "Subscription confirmed. Check your inbox.";
                                     subscribeForm.reset();
-
-                                    // Redirect to thank you page
-                                    setTimeout(() => {
-                                        window.location.href =
-                                            "/thank-you.html";
-                                    }, 1500);
                                 } else {
                                     const data = await response.json();
                                     throw new Error(
