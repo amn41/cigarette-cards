@@ -1,0 +1,632 @@
+[
+ {
+  "uuid": "b686cfd0-c52b-012f-c9e6-58d385a7bc34",
+  "title": "A B C of Sports : A series of 25 (Ogden's St. Julien Tobacco)",
+  "fronts": 25
+ },
+ {
+  "uuid": "f5baa9d0-c52b-012f-5d95-58d385a7bc34",
+  "title": "Actors and Actresses (Player's Cigarettes)",
+  "fronts": 25
+ },
+ {
+  "uuid": "9fa7fdf0-c52d-012f-50a3-58d385a7bc34",
+  "title": "Aeroplane markings : A series of 50 (Lambert & Butler's Cigarettes)",
+  "fronts": 49
+ },
+ {
+  "uuid": "b2d37b40-c52d-012f-f8ec-58d385a7bc34",
+  "title": "Aeroplanes : Series of 48 (Gallaher Ltd.)",
+  "fronts": 48
+ },
+ {
+  "uuid": "1615ed60-c52e-012f-6579-58d385a7bc34",
+  "title": "Aesop's Fables : Series of 25 (Gallaher, Ltd.)",
+  "fronts": 25
+ },
+ {
+  "uuid": "53249090-c52e-012f-65dd-58d385a7bc34",
+  "title": "African Fish : A series of 50 (British American Tobacco Co.)",
+  "fronts": 50
+ },
+ {
+  "uuid": "66052980-c52e-012f-6d83-58d385a7bc34",
+  "title": "African Types : Set of 24 (Raydex Cigarettes)",
+  "fronts": 24
+ },
+ {
+  "uuid": "70423dd0-c52e-012f-7733-58d385a7bc34",
+  "title": "Age of Power and Wonder : A series of 250 pictures (Max Cigarettes)",
+  "fronts": 250
+ },
+ {
+  "uuid": "161d80e0-c52f-012f-c7a8-58d385a7bc34",
+  "title": "Air Raid precautions : A series of 40 (Wills's Cigarettes)",
+  "fronts": 40
+ },
+ {
+  "uuid": "4b853b70-c52f-012f-8f45-58d385a7bc34",
+  "title": "Allied army leaders : A series of 50 (Wills's Cigarettes)",
+  "fronts": 50
+ },
+ {
+  "uuid": "600e6fa0-c52f-012f-8160-58d385a7bc34",
+  "title": "Allies flags : Series of 25 (Gallaher's Cigarettes)",
+  "fronts": 25
+ },
+ {
+  "uuid": "6a3d3310-c52f-012f-5440-58d385a7bc34",
+  "title": "Alpine flowers : A series of 50 (Wills's Cigarettes)",
+  "fronts": 50
+ },
+ {
+  "uuid": "949f5dd0-c52f-012f-ddb5-58d385a7bc34",
+  "title": "Amusing tricks and how to do them : A series of 50 (Carreras Ltd.)",
+  "fronts": 50
+ },
+ {
+  "uuid": "a7af2650-c52f-012f-8fa0-58d385a7bc34",
+  "title": "Ancient and modern fire fighting equipment : Series no. 1 (Benson & Hedges Canada Limited)",
+  "fronts": 48
+ },
+ {
+  "uuid": "b893ce70-c52f-012f-e3f5-58d385a7bc34",
+  "title": "Ancient Chinese (Cavanders Ltd.)",
+  "fronts": 25
+ },
+ {
+  "uuid": "c1702440-c52f-012f-f277-58d385a7bc34",
+  "title": "Ancient Egypt (Cavanders Ltd.)",
+  "fronts": 25
+ },
+ {
+  "uuid": "ca224720-c52f-012f-43af-58d385a7bc34",
+  "title": "Ancient Egyptian gods : A series of 25 (Matossian's Imported Egyptian Cigarettes)",
+  "fronts": 25
+ },
+ {
+  "uuid": "d3194c20-c52f-012f-afdd-58d385a7bc34",
+  "title": "Angling : A series of 25 (Mitchell's Cigarettes)",
+  "fronts": 25
+ },
+ {
+  "uuid": "e79eb2f0-c52f-012f-457c-58d385a7bc34",
+  "title": "Animal Series (Hassan Cork Tip Cigarettes)",
+  "fronts": 142
+ },
+ {
+  "uuid": "1b587dd0-c530-012f-90d8-58d385a7bc34",
+  "title": "Animal studies : Series of 30 (Godfrey Phillips)",
+  "fronts": 30
+ },
+ {
+  "uuid": "976ac2a0-c530-012f-bce1-58d385a7bc34",
+  "title": "Animals and birds (Wills's Cigarettes)",
+  "fronts": 50
+ },
+ {
+  "uuid": "b9493130-c530-012f-8e23-58d385a7bc34",
+  "title": "Animals and Birds of Commercial Value : A series of 100 (Gallaher's Cigarettes)",
+  "fronts": 100
+ },
+ {
+  "uuid": "dc5124e0-c530-012f-32bb-58d385a7bc34",
+  "title": "Animals of the Countryside : A series of 50 (Player's Cigarettes)",
+  "fronts": 48
+ },
+ {
+  "uuid": "ff67c500-c530-012f-aa97-58d385a7bc34",
+  "title": "Animals of the countryside : A series of 25 (\"Mills\" Filtertips)",
+  "fronts": 25
+ },
+ {
+  "uuid": "1ac790e0-c531-012f-d4aa-58d385a7bc34",
+  "title": "Animals and their furs : A series of 25 (Wills's Cigarettes)",
+  "fronts": 25
+ },
+ {
+  "uuid": "2445ca10-c531-012f-bd13-58d385a7bc34",
+  "title": "Animaux et reptiles : Une serie de 25 (Domino Filter)",
+  "fronts": 25
+ },
+ {
+  "uuid": "2d9d6550-c531-012f-2b84-58d385a7bc34",
+  "title": "Annuals : A series of 50 (Godfrey Phillips Ltd.)",
+  "fronts": 50
+ },
+ {
+  "uuid": "462cc620-c531-012f-3e1e-58d385a7bc34",
+  "title": "Antique pottery : A series of 54 hand coloured real photographs (De Reske Cigarettes)",
+  "fronts": 54
+ },
+ {
+  "uuid": "5ac13e00-c531-012f-bfa4-58d385a7bc34",
+  "title": "Applied electricity : A series of 50 (Ogden's Cigarettes)",
+  "fronts": 50
+ },
+ {
+  "uuid": "76b29d10-c531-012f-f6ba-58d385a7bc34",
+  "title": "Aquarium Studies : A series of 25 (Player's Cigarettes)",
+  "fronts": 25
+ },
+ {
+  "uuid": "9175ff10-c531-012f-0794-58d385a7bc34",
+  "title": "Architectural beauties : A series of 25 (Player's Cigarettes)",
+  "fronts": 25
+ },
+ {
+  "uuid": "9aed4700-c531-012f-1205-58d385a7bc34",
+  "title": "Arctic sights (Hassan Cork Top Cigarettes)",
+  "fronts": 17
+ },
+ {
+  "uuid": "a1827720-c531-012f-f750-58d385a7bc34",
+  "title": "Modern school atlas : A series of 96 (Ardath)",
+  "fronts": 96
+ },
+ {
+  "uuid": "dd0a2fe0-c531-012f-cfa6-58d385a7bc34",
+  "title": "Arms and armour : A series of 50 (Hignett's Cigarettes)",
+  "fronts": 50
+ },
+ {
+  "uuid": "02f13b00-c532-012f-78c2-58d385a7bc34",
+  "title": "Arms and armour : A series of 50 (Wills's Cigarettes)",
+  "fronts": 50
+ },
+ {
+  "uuid": "392972e0-c532-012f-5aa1-58d385a7bc34",
+  "title": "Arms of British Empire (Wills's Cigarettes)",
+  "fronts": 50
+ },
+ {
+  "uuid": "a63174d0-c532-012f-8ccc-58d385a7bc34",
+  "title": "Arms of Foreign Cities (Wills's Cigarettes)",
+  "fronts": 50
+ },
+ {
+  "uuid": "4eb89db0-c533-012f-69a1-58d385a7bc34",
+  "title": "Army life : A series of 25 (Wills's Scissors Cigarettes)",
+  "fronts": 25
+ },
+ {
+  "uuid": "8587b470-c533-012f-a66d-58d385a7bc34",
+  "title": "Around The Mediterranean (Nicolas Sarony & Co.)",
+  "fronts": 50
+ },
+ {
+  "uuid": "de156760-c535-012f-5247-58d385a7bc34",
+  "title": "Australian Wild Flowers.",
+  "fronts": 50
+ },
+ {
+  "uuid": "2f5e5580-c536-012f-2b36-58d385a7bc34",
+  "title": "Aviation : A series of 50 (Wills's Cigarettes)",
+  "fronts": 50
+ },
+ {
+  "uuid": "5aca7620-c536-012f-b33a-58d385a7bc34",
+  "title": "Aviation Series (Capstan Cigarettes)",
+  "fronts": 50
+ },
+ {
+  "uuid": "97b79410-c536-012f-b383-58d385a7bc34",
+  "title": "Battle scenes (The American Tobacco Co.)",
+  "fronts": 24
+ },
+ {
+  "uuid": "fa4688b0-c537-012f-7d35-58d385a7bc34",
+  "title": "Beautiful homes : A series of 25 (Wills's Cigarettes)",
+  "fronts": 25
+ },
+ {
+  "uuid": "16ac5fa0-c538-012f-04d0-58d385a7bc34",
+  "title": "Beautiful Scotland : A series of 28 (Peter Jackson Cigarettes)",
+  "fronts": 28
+ },
+ {
+  "uuid": "214b3d40-c538-012f-afc5-58d385a7bc34",
+  "title": "Beautiful Scotland : A series of 48 (Gallaher Ltd.)",
+  "fronts": 48
+ },
+ {
+  "uuid": "d2e1ded0-c538-012f-c313-58d385a7bc34",
+  "title": "Billiards by Tom Newman : A series of 50",
+  "fronts": 50
+ },
+ {
+  "uuid": "904821e0-c539-012f-688c-58d385a7bc34",
+  "title": "Birds of America (Allen & Ginter's Cigarettes)",
+  "fronts": 50
+ },
+ {
+  "uuid": "b4c92c80-c539-012f-a70a-58d385a7bc34",
+  "title": "Birds of Australasia (Wills's Cigarettes)",
+  "fronts": 100
+ },
+ {
+  "uuid": "342d4e10-c53a-012f-fd64-58d385a7bc34",
+  "title": "Birds of brilliant plummage (Magnums Four Aces Cigarettes)",
+  "fronts": 52
+ },
+ {
+  "uuid": "cf923440-c53a-012f-f148-58d385a7bc34",
+  "title": "Bird's Eggs : A series of 50 (Ogden's Cigarettes)",
+  "fronts": 50
+ },
+ {
+  "uuid": "58ed9c40-c53b-012f-6ce6-58d385a7bc34",
+  "title": "Boats of the world (Cope's Cigarettes)",
+  "fronts": 50
+ },
+ {
+  "uuid": "6a7aff80-c53b-012f-28b8-58d385a7bc34",
+  "title": "Boer Leaders (Smoke Taddy's Premier Navy Cut)",
+  "fronts": 20
+ },
+ {
+  "uuid": "e8dbd7b0-c53d-012f-33ad-58d385a7bc34",
+  "title": "Britain's Defenders : A series of 50 (Wills's Specialties Cigarettes)",
+  "fronts": 50
+ },
+ {
+  "uuid": "d6135e70-c53e-012f-6352-58d385a7bc34",
+  "title": "British birds and their eggs : A series of 50 (Hignett's Cigarettes)",
+  "fronts": 50
+ },
+ {
+  "uuid": "8ee1f5e0-c540-012f-2b4a-58d385a7bc34",
+  "title": "British Railway locomotives :  50 (\"Turf\" Cigarettes)",
+  "fronts": 50
+ },
+ {
+  "uuid": "f810dc20-c540-012f-9860-58d385a7bc34",
+  "title": "British sea dogs : Series of 50 (John Sinclair Ltd.)",
+  "fronts": 50
+ },
+ {
+  "uuid": "2d7fbe90-c541-012f-ff48-58d385a7bc34",
+  "title": "British uniforms of the 19th century : A series of 25 (\"Mills\" Filtertips)",
+  "fronts": 25
+ },
+ {
+  "uuid": "4849b8f0-c541-012f-66c5-58d385a7bc34",
+  "title": "British warriors, from 55 B.C. to A.D. 1855 (Cope's Cigarettes)",
+  "fronts": 50
+ },
+ {
+  "uuid": "59ea7730-c541-012f-6b46-58d385a7bc34",
+  "title": "British warships (Godfrey Phillips, Ltd.)",
+  "fronts": 25
+ },
+ {
+  "uuid": "c78c1e00-c541-012f-136c-58d385a7bc34",
+  "title": "Builders of the British Empire (Pattreioux Trawler, Critic, Club Member, Casket Cigarettes)",
+  "fronts": 50
+ },
+ {
+  "uuid": "c91d85e0-c542-012f-d78f-58d385a7bc34",
+  "title": "Cacti : A series of 25 (\"Mills\" Filtertips)",
+  "fronts": 25
+ },
+ {
+  "uuid": "7e984420-c543-012f-faab-58d385a7bc34",
+  "title": "Castles of Ireland : Ancient and modern (Macnoughton, Jenkins & Co., Ltd.)",
+  "fronts": 50
+ },
+ {
+  "uuid": "90023500-c543-012f-8bc4-58d385a7bc34",
+  "title": "Cathedrals : A series of 25 (Wills's Cigarettes)",
+  "fronts": 25
+ },
+ {
+  "uuid": "c65b3a80-c543-012f-856f-58d385a7bc34",
+  "title": "Cavalry : A series of 25 (Illingworth's Cigarettes)",
+  "fronts": 25
+ },
+ {
+  "uuid": "05dea980-c544-012f-7c00-58d385a7bc34",
+  "title": "Celebrated gateways : A series of 50 (Player's Cigarettes)",
+  "fronts": 50
+ },
+ {
+  "uuid": "3d501e50-c544-012f-6ccb-58d385a7bc34",
+  "title": "Celebrated ships (Wills's Cigarettes)",
+  "fronts": 50
+ },
+ {
+  "uuid": "8e6c5710-c546-012f-a0d9-58d385a7bc34",
+  "title": "China's famous warriors (Pirate Cigarettes)",
+  "fronts": 100
+ },
+ {
+  "uuid": "c5f62a70-c546-012f-f352-58d385a7bc34",
+  "title": "Chinese beauties (W.D. & H.O. Wills \"Pirate\" Cigarettes)",
+  "fronts": 50
+ },
+ {
+  "uuid": "2dbcff70-c547-012f-1e6c-58d385a7bc34",
+  "title": "Chinese opera faces (masks) : 40 cards",
+  "fronts": 40
+ },
+ {
+  "uuid": "f61166f0-c549-012f-c3ae-58d385a7bc34",
+  "title": "Clan Tartans : A series of 50 (Mitchell's Cigarettes)",
+  "fronts": 75
+ },
+ {
+  "uuid": "1471d860-c54a-012f-d538-58d385a7bc34",
+  "title": "Clocks - old & new : A series of 20 (Player's Cigarettes)",
+  "fronts": 20
+ },
+ {
+  "uuid": "6ddc3e90-c54a-012f-f39f-58d385a7bc34",
+  "title": "Coins of all nations (Duke's Cigarettes)",
+  "fronts": 50
+ },
+ {
+  "uuid": "7f86e830-c54a-012f-5809-58d385a7bc34",
+  "title": "Coins of the world : A series of 25 (Ce De Ltd.)",
+  "fronts": 26
+ },
+ {
+  "uuid": "02335b50-c54b-012f-023e-58d385a7bc34",
+  "title": "Comic phrases : Series of pictures, 54 designs (Mitcham's cigarettes)",
+  "fronts": 54
+ },
+ {
+  "uuid": "1f36ae30-c54b-012f-a8bd-58d385a7bc34",
+  "title": "Common fallacies : A series of 25 (Lambert & Butler)",
+  "fronts": 25
+ },
+ {
+  "uuid": "bca33220-c54c-012f-cb3a-58d385a7bc34",
+  "title": "Cowboy scenes : Series 1-50 (Hassan Corktip Cigarettes)",
+  "fronts": 19
+ },
+ {
+  "uuid": "bbd87f50-c54f-012f-1287-58d385a7bc34",
+  "title": "Do you know : A series of 50 (Wills's Cigarettes)",
+  "fronts": 50
+ },
+ {
+  "uuid": "cdde0960-c54f-012f-7496-58d385a7bc34",
+  "title": "Do you know : 2nd series of 50 (Wills's Cigarettes)",
+  "fronts": 50
+ },
+ {
+  "uuid": "e0b102e0-c54f-012f-b5c7-58d385a7bc34",
+  "title": "Do you know : 3rd series of 50 (Wills's Cigarettes)",
+  "fronts": 50
+ },
+ {
+  "uuid": "f2c8f600-c54f-012f-21c0-58d385a7bc34",
+  "title": "Do you know : 4th series of 50 (Wills's Cigarettes)",
+  "fronts": 50
+ },
+ {
+  "uuid": "a77d95e0-c550-012f-22a4-58d385a7bc34",
+  "title": "Dogs : A series of 20 (Miranda Ltd.)",
+  "fronts": 20
+ },
+ {
+  "uuid": "a01cdda0-c551-012f-e299-58d385a7bc34",
+  "title": "Dutch scenes : Series of 25",
+  "fronts": 25
+ },
+ {
+  "uuid": "a9025e20-c551-012f-0513-58d385a7bc34",
+  "title": "Dwellings of all nations : A series of 25 (S.C.W.S., Ltd. Cigarettes)",
+  "fronts": 25
+ },
+ {
+  "uuid": "d49115e0-c551-012f-424c-58d385a7bc34",
+  "title": "Egyptian kings & queens and classical deities : A series of 25 (Player’s Cigarettes)",
+  "fronts": 25
+ },
+ {
+  "uuid": "55b6ffe0-c552-012f-3cf9-58d385a7bc34",
+  "title": "Empire railways : A series of 50 (Churchman's Cigarettes)",
+  "fronts": 50
+ },
+ {
+  "uuid": "7c8044f0-c552-012f-7e65-58d385a7bc34",
+  "title": "Engineering wonders : A series of 50",
+  "fronts": 50
+ },
+ {
+  "uuid": "87e82c30-c553-012f-f559-58d385a7bc34",
+  "title": "Evolution of the British Navy : Series no. 1, 25 subjects (Wills's Cigarettes)",
+  "fronts": 25
+ },
+ {
+  "uuid": "a262ace0-c553-012f-c6f8-58d385a7bc34",
+  "title": "Exercises for men and women : A series of 50",
+  "fronts": 50
+ },
+ {
+  "uuid": "b45a5cf0-c553-012f-2a1c-58d385a7bc34",
+  "title": "Exotische volker : Einer ersten serie von 52 stück (Melachrino Cigarettes)",
+  "fronts": 52
+ },
+ {
+  "uuid": "c605f680-c553-012f-7ca2-58d385a7bc34",
+  "title": "Exotische volker : Einer dritten serie von 52 stück (Melachrino Cigarettes)",
+  "fronts": 50
+ },
+ {
+  "uuid": "f93b8310-c553-012f-88b0-58d385a7bc34",
+  "title": "Fables and their morals",
+  "fronts": 100
+ },
+ {
+  "uuid": "a8682a70-c555-012f-a70c-58d385a7bc34",
+  "title": "Famous crosses : A series of 25 (Mitchell's Cigarettes)",
+  "fronts": 25
+ },
+ {
+  "uuid": "80430120-c55d-012f-fe16-58d385a7bc34",
+  "title": "Fire-fighting appliances (Player's Cigarettes)",
+  "fronts": 50
+ },
+ {
+  "uuid": "37b07e10-c55e-012f-82c0-58d385a7bc34",
+  "title": "Fish of Australasia (Capstan Navy Cut Tobacco)",
+  "fronts": 50
+ },
+ {
+  "uuid": "473af670-c563-012f-c5b0-58d385a7bc34",
+  "title": "Foreign birds : Series of 25 (Cavenders Ltd.)",
+  "fronts": 25
+ },
+ {
+  "uuid": "0e7fc620-c566-012f-9810-58d385a7bc34",
+  "title": "General interest series : Architectural monuments (B. Morris & Sons, Ltd.)",
+  "fronts": 6
+ },
+ {
+  "uuid": "14a20990-c566-012f-4d9d-58d385a7bc34",
+  "title": "General interest series : Schools in foreign countries (B. Morris & Sons, Ltd.)",
+  "fronts": 6
+ },
+ {
+  "uuid": "6613f4f0-c569-012f-0ae0-58d385a7bc34",
+  "title": "Heraldic series (B.D.V. Cigarettes)",
+  "fronts": 25
+ },
+ {
+  "uuid": "6f502ef0-c569-012f-b7a6-58d385a7bc34",
+  "title": "Heraldic signs & their origin : A series of 25 (Wills's Cigarettes)",
+  "fronts": 25
+ },
+ {
+  "uuid": "aeb78190-c569-012f-9800-58d385a7bc34",
+  "title": "Highland clans (Player's Cigarettes)",
+  "fronts": 25
+ },
+ {
+  "uuid": "b92288b0-c569-012f-bb30-58d385a7bc34",
+  "title": "Highwaymen : Series of twenty-five (Carreras Ltd.)",
+  "fronts": 25
+ },
+ {
+  "uuid": "c3b91e70-c569-012f-5457-58d385a7bc34",
+  "title": "Hindoo Gods (Peninsular Tobacco Co., Ltd. \"Hawagharri\" Cigarettes)",
+  "fronts": 25
+ },
+ {
+  "uuid": "a4859170-c56b-012f-cd05-58d385a7bc34",
+  "title": "Holidays in Britain : A Series of 48 (Churchman Cigarettes)",
+  "fronts": 48
+ },
+ {
+  "uuid": "5f30ece0-c56c-012f-060c-58d385a7bc34",
+  "title": "Horses of today : A series of 50 illustrations (Vice Regal Mixture)",
+  "fronts": 50
+ },
+ {
+  "uuid": "1d7dd120-c56d-012f-9f73-58d385a7bc34",
+  "title": "How to do it : Series of 25 (C.W.S.)",
+  "fronts": 25
+ },
+ {
+  "uuid": "28341820-c56d-012f-64ff-58d385a7bc34",
+  "title": "How to do it: 100 in set (Gallaher's Cigarettes)",
+  "fronts": 100
+ },
+ {
+  "uuid": "500bdc10-c56d-012f-7292-58d385a7bc34",
+  "title": "How to make a valve amplifier for the B.D.V. crystal set : A series of 25 (Godfrey Phillips Cigarettes)",
+  "fronts": 25
+ },
+ {
+  "uuid": "5a9464d0-c56d-012f-4b97-58d385a7bc34",
+  "title": "How to make your own wireless set : A series of 25 (Godfrey Phillips Cigarettes)",
+  "fronts": 25
+ },
+ {
+  "uuid": "6a360f10-c56d-012f-10b4-58d385a7bc34",
+  "title": "How to play golf : A series of 50 (Imperial Tobacco Co. of Canada)",
+  "fronts": 50
+ },
+ {
+  "uuid": "a7ae9980-c56d-012f-cb8c-58d385a7bc34",
+  "title": "How to swim : A series of 50 (Ogden's Cigarettes)",
+  "fronts": 50
+ },
+ {
+  "uuid": "d0181ea0-c56d-012f-7eb2-58d385a7bc34",
+  "title": "Howlers : A series of 40 (Churchman's Cigarettes)",
+  "fronts": 40
+ },
+ {
+  "uuid": "e10fd660-c56d-012f-91d1-58d385a7bc34",
+  "title": "Humorous drawings by Peter Fraser : A series of 50 (Mitchell's Cigarettes)",
+  "fronts": 50
+ },
+ {
+  "uuid": "57089220-c56e-012f-5ac6-58d385a7bc34",
+  "title": "Indian chiefs",
+  "fronts": 50
+ },
+ {
+  "uuid": "9d742bb0-c56e-012f-b6c6-58d385a7bc34",
+  "title": "Indian life in the \"60's\" (Hassan Cork Top Cigarettes)",
+  "fronts": 51
+ },
+ {
+  "uuid": "c723f800-c56e-012f-4311-58d385a7bc34",
+  "title": "Indian series (Godfrey Phillips Ltd.)",
+  "fronts": 25
+ },
+ {
+  "uuid": "0f260db0-c56f-012f-e9ba-58d385a7bc34",
+  "title": "Interesting buildings : A series of 50 (Hignett's Cigarettes)",
+  "fronts": 50
+ },
+ {
+  "uuid": "3841f930-c56f-012f-ad6c-58d385a7bc34",
+  "title": "Interesting buildings and views : A series of over 250 subjects (Cohen, Weenen & Co. Sweet Crop Cigarettes)",
+  "fronts": 20
+ },
+ {
+  "uuid": "553c9d60-c56f-012f-bf7f-58d385a7bc34",
+  "title": "Interesting door-knockers : Series of 25 (Churchman's Cigarettes)",
+  "fronts": 25
+ },
+ {
+  "uuid": "67852320-c570-012f-8df7-58d385a7bc34",
+  "title": "Inventors (Bucktrout & Co., Ltd.)",
+  "fronts": 20
+ },
+ {
+  "uuid": "80181dd0-c570-012f-4715-58d385a7bc34",
+  "title": "Inventors and their inventions series : 21-40 (R. & J. Hill, Ltd.)",
+  "fronts": 20
+ },
+ {
+  "uuid": "5dfb5d90-c572-012f-9a8b-58d385a7bc34",
+  "title": "Kings and Queens (Wills's Cigarettes)",
+  "fronts": 50
+ },
+ {
+  "uuid": "8207c7e0-c572-012f-6e9f-58d385a7bc34",
+  "title": "Kings and Queens of England : A series of 50 (Carreras)",
+  "fronts": 50
+ },
+ {
+  "uuid": "13eabc60-c573-012f-f721-58d385a7bc34",
+  "title": "Klondyke series (Taddy & Co's Cigarettes)",
+  "fronts": 10
+ },
+ {
+  "uuid": "b2431e20-c573-012f-13e2-58d385a7bc34",
+  "title": "Leaders of men : A series of 50 (Ogden's Cigarettes)",
+  "fronts": 50
+ },
+ {
+  "uuid": "79c06ed0-c5a0-012f-c9d7-58d385a7bc34",
+  "title": "The World's greatest explorers (Hassan Cork Tip Cigarettes)",
+  "fronts": 19
+ }
+]
