@@ -117,19 +117,15 @@ SANS = "Helvetica, Arial, sans-serif"
 SERIF = "Georgia, 'Times New Roman', serif"
 
 
-def side_block(src, alt, label):
+def side_block(src, alt):
     """One side of the card. Sits beside its partner when there is room, stacks when there is not."""
-    label_html = (
-        f'<p style="margin:10px 0 0;font-family:{SANS};font-size:11px;letter-spacing:1.5px;'
-        f'text-transform:uppercase;color:#8a7f75;">{label}</p>' if label else ""
-    )
     return (
         f'<div style="display:inline-block;width:100%;max-width:270px;vertical-align:top;">'
         f'<div style="padding:0 15px 20px;text-align:center;">'
         f'<img src="{src}" alt="{alt}" width="240" '
         f'style="display:block;width:100%;max-width:240px;height:auto;margin:0 auto;'
         f'border:1px solid #e5d9c8;border-radius:6px;background-color:#ffffff;">'
-        f'{label_html}</div></div>'
+        f'</div></div>'
     )
 
 
@@ -138,11 +134,9 @@ def build_email_html(card, today):
     series = html.escape(card.get("series") or "")
     date = today.strftime("%A, %B %-d, %Y")
 
+    sides = side_block(image_url(card["front"]), f"Front of the card: {title}")
     if card.get("back"):
-        sides = (side_block(image_url(card["front"]), f"Front of the card: {title}", "Front")
-                 + side_block(image_url(card["back"]), f"Back of the card: {title}", "Back"))
-    else:
-        sides = side_block(image_url(card["front"]), title, "")
+        sides += side_block(image_url(card["back"]), f"Back of the card: {title}")
 
     return f"""<!DOCTYPE html>
 <html lang="en">
