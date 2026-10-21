@@ -15,6 +15,11 @@
             rel="stylesheet"
         />
         <link rel="stylesheet" href="styles.css" />
+        <script
+            src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+            async
+            defer
+        ></script>
     </head>
     <body>
         <section class="hero">
@@ -74,6 +79,17 @@
                             placeholder="Your email address"
                             required
                         />
+                        <div class="hp-field" aria-hidden="true">
+                            <label>
+                                Leave this empty
+                                <input
+                                    type="text"
+                                    name="website"
+                                    tabindex="-1"
+                                    autocomplete="off"
+                                />
+                            </label>
+                        </div>
                         <button type="submit" id="subscribe-button">
                             Subscribe
                         </button>
@@ -84,6 +100,13 @@
                     >
                         Unsubscribe anytime.
                     </p>
+                    <!-- Only shows up when Cloudflare wants the visitor to click -->
+                    <div
+                        class="cf-turnstile"
+                        id="turnstile"
+                        data-sitekey="0x4AAAAAAFe1g5aXWT_-k5G4"
+                        data-appearance="interaction-only"
+                    ></div>
                 </div>
             </div>
         </section>
@@ -161,10 +184,22 @@
                 const subscribeButton =
                     document.getElementById("subscribe-button");
                 const formMessage = document.getElementById("form-message");
+                const turnstileWidget = document.getElementById("turnstile");
 
                 if (subscribeForm) {
                     subscribeForm.addEventListener("submit", function (e) {
                         e.preventDefault();
+
+                        // Cloudflare puts its token in a hidden input inside the widget
+                        const tokenInput = turnstileWidget.querySelector(
+                            '[name="cf-turnstile-response"]',
+                        );
+                        const turnstileToken = tokenInput && tokenInput.value;
+                        if (!turnstileToken) {
+                            formMessage.innerText =
+                                "Please wait for the check below to finish, then try again.";
+                            return;
+                        }
 
                         // Disable button and show loading state
                         subscribeButton.disabled = true;
@@ -174,6 +209,7 @@
                         // Get form data
                         const formData = new FormData(subscribeForm);
                         const email = formData.get("email");
+                        const website = formData.get("website");
 
                         // Submit form using fetch API
                         fetch("/.netlify/functions/subscribe", {
@@ -181,7 +217,11 @@
                             headers: {
                                 "Content-Type": "application/json",
                             },
-                            body: JSON.stringify({ email }),
+                            body: JSON.stringify({
+                                email,
+                                website,
+                                turnstileToken,
+                            }),
                         })
                             .then(async (response) => {
                                 if (response.ok) {
@@ -199,6 +239,10 @@
                             })
                             .catch((error) => {
                                 console.error("Error:", error);
+                                // Tokens are single-use, so get a fresh one
+                                if (window.turnstile) {
+                                    window.turnstile.reset(turnstileWidget);
+                                }
                                 subscribeButton.innerText = "Subscribe";
                                 subscribeButton.disabled = false;
                                 formMessage.innerText = `Error: ${error.message}. Please try again.`;

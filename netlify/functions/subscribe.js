@@ -3,44 +3,64 @@ const { Resend } = require("resend");
 // Initialize Resend with API key from environment variable
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+// The signup form is served from the site itself, so cross-origin requests are
+// never needed. Anything sent from another origin is rejected.
+const ALLOWED_ORIGINS = ["https://cigarettecard.club"];
+
+function respond(statusCode, body) {
+  return { statusCode, body: JSON.stringify(body) };
+}
+
+// Ask Cloudflare whether the Turnstile token from the form is genuine.
+async function passesBotCheck(token, ip) {
+  const params = { secret: process.env.TURNSTILE_SECRET_KEY, response: token };
+  if (ip) params.remoteip = ip;
+  const response = await fetch(
+    "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+    { method: "POST", body: new URLSearchParams(params) },
+  );
+  const result = await response.json();
+  return result.success === true;
+}
+
 exports.handler = async function (event, context) {
-  // Set CORS headers
-  const headers = {
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Headers": "Content-Type",
-    "Access-Control-Allow-Methods": "POST, OPTIONS",
-  };
-
-  // Handle preflight requests
-  if (event.httpMethod === "OPTIONS") {
-    return {
-      statusCode: 200,
-      headers,
-      body: "",
-    };
-  }
-
   // Make sure this is a POST request
   if (event.httpMethod !== "POST") {
-    return {
-      statusCode: 405,
-      headers,
-      body: JSON.stringify({ error: "Method not allowed" }),
-    };
+    return respond(405, { error: "Method not allowed" });
   }
+
+  if (!ALLOWED_ORIGINS.includes(event.headers.origin)) {
+    return respond(403, { error: "Forbidden" });
+  }
+
+  const success = respond(200, {
+    success: true,
+    message: "Subscription successful! Check your email for confirmation.",
+  });
 
   try {
     // Parse JSON body (since we're only sending JSON now)
     const body = JSON.parse(event.body);
     const email = body.email;
 
+    // The "website" field is hidden from people, so only bots fill it in.
+    // Pretend it worked so they don't learn to skip it.
+    if (body.website) {
+      return success;
+    }
+
     // Validate email (basic validation)
     if (!email || !email.includes("@")) {
-      return {
-        statusCode: 400,
-        headers,
-        body: JSON.stringify({ error: "Please provide a valid email address" }),
-      };
+      return respond(400, { error: "Please provide a valid email address" });
+    }
+
+    if (!process.env.TURNSTILE_SECRET_KEY) {
+      console.error("TURNSTILE_SECRET_KEY is not set; refusing signups");
+      return respond(500, { error: "Signups are temporarily unavailable" });
+    }
+    const ip = event.headers["x-nf-client-connection-ip"];
+    if (!body.turnstileToken || !(await passesBotCheck(body.turnstileToken, ip))) {
+      return respond(403, { error: "The bot check failed" });
     }
 
     // Send confirmation email
@@ -88,21 +108,9 @@ exports.handler = async function (event, context) {
       // Continue - don't fail the whole function if this part doesn't work
     }
 
-    // Return success response (JSON instead of redirect)
-    return {
-      statusCode: 200,
-      headers,
-      body: JSON.stringify({
-        success: true,
-        message: "Subscription successful! Check your email for confirmation.",
-      }),
-    };
+    return success;
   } catch (error) {
     console.error("Function error:", error);
-    return {
-      statusCode: 500,
-      headers,
-      body: JSON.stringify({ error: `Server error: ${error.message}` }),
-    };
+    return respond(500, { error: `Server error: ${error.message}` });
   }
 };

@@ -244,6 +244,20 @@ h1, h2, h3 {
     background-color: var(--primary-light);
 }
 
+/* Honeypot: off-screen so people never see it, but bots fill it in */
+.hp-field {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.cf-turnstile {
+    display: flex;
+    justify-content: center;
+}
+
 /* About section */
 .about {
     padding: 80px 0 0;
